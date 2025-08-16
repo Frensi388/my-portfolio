@@ -93,7 +93,7 @@ const Contact = () => {
               <h3 className="mb-2 text-xl font-bold">LinkedIn</h3>
               <p className="mb-4 text-blue-100">Connect professionally</p>
               <a
-                href="https://linkedin.com/in/frensimuso"
+                href="www.linkedin.com/in/frensi-muso-bb8aab28b"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block transform rounded-lg bg-white/20 px-4 py-2 text-sm font-medium transition-all duration-200 hover:scale-105 hover:bg-white/30"
@@ -104,7 +104,7 @@ const Contact = () => {
           </div>
 
           {/* Availability Status */}
-          <div className="mt-12 text-center">
+          {/* <div className="mt-12 text-center">
             <div className="inline-flex items-center rounded-2xl border border-green-200 bg-green-50 px-6 py-4 dark:border-green-800 dark:bg-green-900/20">
               <div className="mr-3 h-3 w-3 animate-pulse rounded-full bg-green-500"></div>
               <div>
@@ -116,7 +116,7 @@ const Contact = () => {
                 </span>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>
