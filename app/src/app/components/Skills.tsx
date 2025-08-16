@@ -155,45 +155,45 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="bg-white py-20 dark:bg-gray-800">
+    <section id="skills" className="bg-white py-12 dark:bg-gray-800 sm:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="mb-16 text-center">
-          <h2 className="mb-4 text-4xl font-bold text-gray-900 dark:text-white">
+        <div className="mb-8 text-center sm:mb-16">
+          <h2 className="mb-3 text-2xl font-bold text-gray-900 dark:text-white sm:mb-4 sm:text-3xl lg:text-4xl">
             Skills & Expertise
           </h2>
-          <p className="mx-auto max-w-3xl text-xl text-gray-600 dark:text-gray-300">
+          <p className="mx-auto max-w-3xl text-base text-gray-600 dark:text-gray-300 sm:text-lg lg:text-xl">
             A comprehensive overview of my technical skills and proficiency
             levels across different domains.
           </p>
         </div>
 
         {/* Skills Grid */}
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
           {skills.map((skill) => (
             <div
               key={skill.id}
-              className="group relative rounded-xl border border-gray-200 bg-white p-6 shadow-lg transition-all duration-300 hover:border-emerald-300 hover:shadow-xl dark:border-gray-600 dark:bg-gray-700 dark:hover:border-emerald-500"
+              className="group relative rounded-xl border border-gray-200 bg-white p-4 shadow-lg transition-all duration-300 hover:border-emerald-300 hover:shadow-xl dark:border-gray-600 dark:bg-gray-700 dark:hover:border-emerald-500 sm:p-6"
             >
               {/* Skill Header */}
-              <div className="mb-4 flex items-center">
+              <div className="mb-3 flex items-center sm:mb-4">
                 <div
-                  className={`h-12 w-12 rounded-lg bg-gradient-to-r ${skill.color} mr-4 flex items-center justify-center text-2xl`}
+                  className={`h-10 w-10 rounded-lg bg-gradient-to-r ${skill.color} mr-3 flex items-center justify-center text-lg sm:mr-4 sm:h-12 sm:w-12 sm:text-xl lg:text-2xl`}
                 >
                   {skill.icon}
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-gray-900 dark:text-white">
+                  <h3 className="text-base font-bold text-gray-900 dark:text-white sm:text-lg">
                     {skill.name}
                   </h3>
-                  <p className="text-sm text-gray-500 dark:text-gray-400">
+                  <p className="text-xs text-gray-500 dark:text-gray-400 sm:text-sm">
                     {skill.level} projects
                   </p>
                 </div>
               </div>
 
               {/* Description */}
-              <p className="text-sm leading-relaxed text-gray-600 dark:text-gray-300">
+              <p className="text-xs leading-relaxed text-gray-600 dark:text-gray-300 sm:text-sm">
                 {skill.description}
               </p>
 
@@ -206,20 +206,20 @@ const Skills = () => {
         </div>
 
         {/* Additional Info */}
-        <div className="mt-16 text-center">
-          <div className="mx-auto max-w-4xl rounded-2xl bg-gray-50 p-8 dark:bg-gray-700">
-            <h3 className="mb-4 text-2xl font-bold text-gray-900 dark:text-white">
+        <div className="mt-8 text-center sm:mt-16">
+          <div className="mx-auto max-w-4xl rounded-2xl bg-gray-50 p-6 dark:bg-gray-700 sm:p-8">
+            <h3 className="mb-3 text-xl font-bold text-gray-900 dark:text-white sm:mb-4 sm:text-2xl">
               Always Learning & Growing
             </h3>
-            <p className="mb-6 text-gray-600 dark:text-gray-300">
+            <p className="mb-4 text-sm text-gray-600 dark:text-gray-300 sm:mb-6 sm:text-base">
               I&apos;m constantly expanding my skill set and staying up-to-date
               with the latest technologies. Currently exploring advanced topics
               in AI/ML, cloud architecture, and emerging web technologies.
             </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <span className="inline-flex items-center gap-2 rounded-full bg-emerald-100 px-4 py-2 text-sm font-medium text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-300">
+            <div className="flex flex-wrap justify-center gap-2 sm:gap-4">
+              <span className="inline-flex items-center gap-2 rounded-full bg-emerald-100 px-3 py-1.5 text-xs font-medium text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-300 sm:px-4 sm:py-2 sm:text-sm">
                 <svg
-                  className="h-4 w-4"
+                  className="h-3 w-3 sm:h-4 sm:w-4"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"

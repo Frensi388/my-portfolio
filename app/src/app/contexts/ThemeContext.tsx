@@ -12,16 +12,33 @@ interface ThemeContextType {
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export const ThemeProvider = (props: { children: React.ReactNode }) => {
-  const [theme, setTheme] = useState<Theme>("light");
+  const [theme, setTheme] = useState<Theme>(() => {
+    // Check if we're on the client side
+    if (typeof window !== "undefined") {
+      const savedTheme = localStorage.getItem("theme") as Theme;
+      if (savedTheme) {
+        return savedTheme;
+      } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        return "dark";
+      }
+    }
+    return "light";
+  });
 
   useEffect(() => {
+    // This effect will only run to sync any changes that might have happened
+    // during hydration, but the initial state should already be correct
     const savedTheme = localStorage.getItem("theme") as Theme;
-    if (savedTheme) {
+    if (savedTheme && savedTheme !== theme) {
       setTheme(savedTheme);
-    } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+    } else if (
+      !savedTheme &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches &&
+      theme !== "dark"
+    ) {
       setTheme("dark");
     }
-  }, []);
+  }, [theme]);
 
   useEffect(() => {
     const root = window.document.documentElement;

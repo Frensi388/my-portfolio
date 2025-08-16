@@ -2,14 +2,14 @@
 
 const Contact = () => {
   return (
-    <section id="contact" className="bg-white py-20 dark:bg-gray-800">
+    <section id="contact" className="bg-white py-12 dark:bg-gray-800 sm:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="mb-16 text-center">
-          <h2 className="mb-4 text-4xl font-bold text-gray-900 dark:text-white">
+        <div className="mb-8 text-center sm:mb-16">
+          <h2 className="mb-3 text-2xl font-bold text-gray-900 dark:text-white sm:mb-4 sm:text-3xl lg:text-4xl">
             Let&apos;s Connect
           </h2>
-          <p className="mx-auto max-w-3xl text-xl text-gray-600 dark:text-gray-300">
+          <p className="mx-auto max-w-3xl text-base text-gray-600 dark:text-gray-300 sm:text-lg lg:text-xl">
             I&apos;m always interested in hearing about new opportunities,
             interesting projects, or just having a chat about technology and
             development.
@@ -18,12 +18,12 @@ const Contact = () => {
 
         {/* Contact Cards */}
         <div className="mx-auto max-w-4xl">
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3">
             {/* Email Card */}
-            <div className="group rounded-2xl bg-gradient-to-br from-emerald-600 to-teal-600 p-8 text-white transition-all duration-300 hover:scale-105 hover:shadow-xl">
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-white/20">
+            <div className="group rounded-2xl bg-gradient-to-br from-emerald-600 to-teal-600 p-6 text-white transition-all duration-300 hover:scale-105 hover:shadow-xl sm:p-8 lg:col-span-1">
+              <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-white/20 sm:mb-4 sm:h-12 sm:w-12">
                 <svg
-                  className="h-6 w-6"
+                  className="h-5 w-5 sm:h-6 sm:w-6"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -36,21 +36,23 @@ const Contact = () => {
                   />
                 </svg>
               </div>
-              <h3 className="mb-2 text-xl font-bold">Email</h3>
-              <p className="mb-4 text-emerald-100">Drop me a line anytime</p>
+              <h3 className="mb-2 text-lg font-bold sm:text-xl">Email</h3>
+              <p className="mb-3 text-sm text-emerald-100 sm:mb-4 sm:text-base">
+                Drop me a line anytime
+              </p>
               <a
                 href="mailto:frensimuso2000@gmail.com"
-                className="inline-block transform rounded-lg bg-white/20 px-4 py-2 text-sm font-medium transition-all duration-200 hover:scale-105 hover:bg-white/30"
+                className="inline-block transform rounded-lg bg-white/20 px-3 py-1.5 text-xs font-medium transition-all duration-200 hover:scale-105 hover:bg-white/30 sm:px-4 sm:py-2 sm:text-sm"
               >
                 frensimuso2000@gmail.com
               </a>
             </div>
 
             {/* Phone Card */}
-            <div className="group rounded-2xl bg-gradient-to-br from-gray-600 to-gray-700 p-8 text-white transition-all duration-300 hover:scale-105 hover:shadow-xl">
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-white/20">
+            <div className="group rounded-2xl bg-gradient-to-br from-gray-600 to-gray-700 p-6 text-white transition-all duration-300 hover:scale-105 hover:shadow-xl sm:p-8">
+              <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-white/20 sm:mb-4 sm:h-12 sm:w-12">
                 <svg
-                  className="h-6 w-6"
+                  className="h-5 w-5 sm:h-6 sm:w-6"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -63,23 +65,23 @@ const Contact = () => {
                   />
                 </svg>
               </div>
-              <h3 className="mb-2 text-xl font-bold">Phone</h3>
-              <p className="mb-4 text-gray-300">
+              <h3 className="mb-2 text-lg font-bold sm:text-xl">Phone</h3>
+              <p className="mb-3 text-sm text-gray-300 sm:mb-4 sm:text-base">
                 Let&apos;s have a conversation
               </p>
               <a
                 href="tel:+33753024373"
-                className="inline-block transform rounded-lg bg-white/20 px-4 py-2 text-sm font-medium transition-all duration-200 hover:scale-105 hover:bg-white/30"
+                className="inline-block transform rounded-lg bg-white/20 px-3 py-1.5 text-xs font-medium transition-all duration-200 hover:scale-105 hover:bg-white/30 sm:px-4 sm:py-2 sm:text-sm"
               >
                 +33 7 53 02 43 73
               </a>
             </div>
 
             {/* LinkedIn Card */}
-            <div className="group rounded-2xl bg-gradient-to-br from-blue-600 to-blue-700 p-8 text-white transition-all duration-300 hover:scale-105 hover:shadow-xl">
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-white/20">
+            <div className="group rounded-2xl bg-gradient-to-br from-blue-600 to-blue-700 p-6 text-white transition-all duration-300 hover:scale-105 hover:shadow-xl sm:col-span-2 sm:p-8 lg:col-span-1">
+              <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-white/20 sm:mb-4 sm:h-12 sm:w-12">
                 <svg
-                  className="h-6 w-6"
+                  className="h-5 w-5 sm:h-6 sm:w-6"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                 >
@@ -90,13 +92,15 @@ const Contact = () => {
                   />
                 </svg>
               </div>
-              <h3 className="mb-2 text-xl font-bold">LinkedIn</h3>
-              <p className="mb-4 text-blue-100">Connect professionally</p>
+              <h3 className="mb-2 text-lg font-bold sm:text-xl">LinkedIn</h3>
+              <p className="mb-3 text-sm text-blue-100 sm:mb-4 sm:text-base">
+                Connect professionally
+              </p>
               <a
                 href="www.linkedin.com/in/frensi-muso-bb8aab28b"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block transform rounded-lg bg-white/20 px-4 py-2 text-sm font-medium transition-all duration-200 hover:scale-105 hover:bg-white/30"
+                className="inline-block transform rounded-lg bg-white/20 px-3 py-1.5 text-xs font-medium transition-all duration-200 hover:scale-105 hover:bg-white/30 sm:px-4 sm:py-2 sm:text-sm"
               >
                 View Profile
               </a>

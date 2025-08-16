@@ -1,12 +1,5 @@
 "use client";
 
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
 import { getPersonalProjects } from "@/data/projects";
 
 import ProjectSlide from "./ProjectSlide";
@@ -17,71 +10,74 @@ const Projects = () => {
   const personalProjects = getPersonalProjects();
 
   return (
-    <section id="projects" className="bg-gray-50 py-20 dark:bg-gray-900">
+    <section
+      id="projects"
+      className="bg-gray-50 py-12 dark:bg-gray-900 sm:py-20"
+    >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="mb-16 text-center">
-          <h2 className="mb-4 text-4xl font-bold text-gray-900 dark:text-white">
+        <div className="mb-8 text-center sm:mb-16">
+          <h2 className="mb-3 text-2xl font-bold text-gray-900 dark:text-white sm:mb-4 sm:text-3xl lg:text-4xl">
             My Projects
           </h2>
-          <p className="mx-auto max-w-3xl text-xl text-gray-600 dark:text-gray-300">
+          <p className="mx-auto max-w-3xl text-base text-gray-600 dark:text-gray-300 sm:text-lg lg:text-xl">
             A comprehensive overview of my professional work and personal
             projects.
           </p>
         </div>
 
         {/* Professional Timeline */}
-        <div className="mb-20">
+        <div className="mb-12 sm:mb-20">
           <Timeline embedded={true} />
         </div>
 
         {/* Personal Projects Section */}
-        <div className="mb-16 text-center">
-          <h3 className="mb-4 text-3xl font-bold text-gray-900 dark:text-white">
+        <div className="mb-8 text-center sm:mb-16">
+          <h3 className="mb-3 text-xl font-bold text-gray-900 dark:text-white sm:mb-4 sm:text-2xl lg:text-3xl">
             Personal Projects
           </h3>
-          <p className="mx-auto max-w-3xl text-lg text-gray-600 dark:text-gray-300">
+          <p className="mx-auto max-w-3xl text-sm text-gray-600 dark:text-gray-300 sm:text-base lg:text-lg">
             Passion projects and personal experiments that showcase my
             creativity and exploration of new technologies.
           </p>
         </div>
 
         {/* Info about personal projects */}
-        <div className="mb-12 text-center">
-          <div className="inline-flex items-center gap-2 rounded-full bg-emerald-100 px-6 py-3 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-300">
-            <span className="text-lg">🚀</span>
-            <span className="font-medium">
+        <div className="mb-8 text-center sm:mb-12">
+          <div className="inline-flex items-center gap-2 rounded-full bg-emerald-100 px-4 py-2 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-300 sm:px-6 sm:py-3">
+            <span className="text-base sm:text-lg">🚀</span>
+            <span className="text-sm font-medium sm:text-base">
               {personalProjects.length} Personal Projects
             </span>
           </div>
         </div>
 
-        {/* Horizontal Gallery */}
-        <Carousel opts={{ align: "start" }} className="w-full">
-          <CarouselContent>
-            {personalProjects.map((project) => (
-              <CarouselItem
-                key={project.id}
-                className="basis-[90%] pl-4 sm:basis-[80%] md:basis-[70%] md:pl-6 lg:basis-[60%] xl:basis-1/2"
-              >
-                <ProjectSlide project={project} />
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
-        </Carousel>
+        {/* Horizontal Scrollable Gallery */}
+        <div className="flex justify-center">
+          <div className="scrollbar-hide max-w-full overflow-x-auto">
+            <div className="flex gap-4 pb-4 sm:gap-6">
+              {personalProjects.map((project) => (
+                <div
+                  key={project.id}
+                  className="w-[85vw] flex-shrink-0 sm:w-[75vw] md:w-[65vw] lg:w-[50vw] xl:w-[400px]"
+                >
+                  <ProjectSlide project={project} />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
 
         {/* View More Button */}
-        <div className="mt-16 text-center">
+        <div className="mt-8 text-center sm:mt-16">
           <a
             href="https://github.com/Frensi388"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center rounded-lg bg-gray-900 px-8 py-4 font-semibold text-white transition-all duration-200 hover:bg-gray-800 dark:bg-white dark:text-gray-900 dark:hover:bg-gray-100"
+            className="inline-flex items-center rounded-lg bg-gray-900 px-6 py-3 text-sm font-semibold text-white transition-all duration-200 hover:bg-gray-800 dark:bg-white dark:text-gray-900 dark:hover:bg-gray-100 sm:px-8 sm:py-4 sm:text-base"
           >
             <svg
-              className="mr-2 h-5 w-5"
+              className="mr-2 h-4 w-4 sm:h-5 sm:w-5"
               fill="currentColor"
               viewBox="0 0 20 20"
               xmlns="http://www.w3.org/2000/svg"

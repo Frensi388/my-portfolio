@@ -141,6 +141,16 @@ html {
   background: #9ca3af;
 }
 
+/* Hide scrollbar utility */
+.scrollbar-hide {
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
+
 /* Focus styles */
 .focus-visible:focus {
   outline: 2px solid #3b82f6;
