@@ -1,5 +1,3 @@
-"use client";
-
 import { ArrowLeft, Calendar, ExternalLink, MapPin, Users } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -15,13 +13,14 @@ import {
 import { projects } from "@/data/projects";
 
 type PageProps = {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 };
 
-const ProjectPage = ({ params }: PageProps) => {
-  const project = projects.find((p) => p.id === parseInt(params.id));
+const ProjectPage = async ({ params }: PageProps) => {
+  const { id } = await params;
+  const project = projects.find((p) => p.id === parseInt(id));
 
   if (!project) {
     notFound();
