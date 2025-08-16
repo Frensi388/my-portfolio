@@ -56,8 +56,8 @@ const Hero = () => {
                 Frensi Muso
               </h1>
               <p className="max-w-3xl animate-fade-in-delay text-xl text-gray-600 dark:text-gray-300 md:text-2xl">
-                A passionate Software Engineer crafting digital experiences with
-                modern technologies
+                A passionate Software Engineer based in Paris, France, crafting
+                digital experiences with modern technologies
               </p>
             </div>
 
@@ -88,12 +88,12 @@ const Hero = () => {
               >
                 View My Work
               </a>
-              {/* <a
+              <a
                 href="#contact"
                 className="transform rounded-lg border-2 border-gray-300 px-8 py-4 font-semibold text-gray-700 transition-all duration-200 hover:scale-105 hover:border-emerald-600 hover:text-emerald-600 dark:border-gray-600 dark:text-gray-300 dark:hover:border-emerald-400 dark:hover:text-emerald-400"
               >
                 Get In Touch
-              </a> */}
+              </a>
             </div>
           </div>
         </div>

@@ -136,7 +136,6 @@ export const projects: Project[] = [
     description:
       "Built a comprehensive climate and mobility tracking application helping users monitor their carbon footprint through quiz flows and smart suggestions.",
     projectKey: "ithake",
-
     media: [
       {
         src: "https://cdn.sanity.io/images/vh1j19fm/production/a743e49fac333bb9289fef03bb394a6837f34e57-3416x1976.png",
@@ -166,7 +165,7 @@ export const projects: Project[] = [
       "JWT",
     ],
     category: "fullstack",
-    liveUrl: "https://ithake.com",
+    liveUrl: "https://www.comite-eco.fr/",
     featured: true,
     achievements: [
       "JWT auth across web + React Native platforms",
