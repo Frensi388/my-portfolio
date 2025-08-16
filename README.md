@@ -1,4 +1,4 @@
-# Frensimuso Portfolio Website
+# Frensi Portfolio Website
 
 A modern, responsive portfolio website built with Next.js 15, TypeScript, and Tailwind CSS. Features dark/light mode, interactive project showcase, skills section, learning blog, and contact form.
 
@@ -225,6 +225,6 @@ If you have any questions or need help customizing the portfolio:
 
 ---
 
-**Built with ❤️ by Frensimuso**
+**Built with ❤️ by Frensi**
 
 _Feel free to use this template for your own portfolio!_
