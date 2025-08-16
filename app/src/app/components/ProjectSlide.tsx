@@ -1,210 +1,116 @@
 "use client";
 
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
 import { type Project } from "@/data/projects";
 
-import MediaItem from "./MediaItem";
 import ProjectCover from "./ProjectCover";
 
+const getCategoryColor = (category: string) => {
+  const colors = {
+    fullstack: "from-emerald-500 to-teal-500",
+    data: "from-teal-500 to-emerald-500",
+    mobile: "from-emerald-600 to-teal-600",
+    fintech: "from-green-500 to-emerald-500",
+    personal: "from-emerald-400 to-teal-400",
+  };
+  return colors[category as keyof typeof colors] || "from-gray-500 to-gray-600";
+};
+
 const ProjectSlide = (props: { project: Project }) => {
-  const mediaFiles = props.project.media;
+  const { project } = props;
 
   return (
-    <Dialog>
-      <DialogTrigger asChild>
-        <div className="group cursor-pointer overflow-hidden rounded-2xl bg-white shadow-lg transition-all duration-300 hover:shadow-xl dark:bg-gray-800">
-          <div className="relative aspect-[16/9] overflow-hidden">
-            <ProjectCover
-              media={mediaFiles[0]}
-              fallbackSrc={props.project.images[0]}
-              fallbackAlt={props.project.title}
-              className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-            />
-            {props.project.featured && (
-              <div className="absolute right-3 top-3 rounded-full bg-yellow-500 px-2 py-1 text-xs font-medium text-white">
-                Featured
-              </div>
-            )}
-          </div>
-
-          <div className="p-6">
-            <div className="mb-3">
-              <h3 className="mb-1 text-lg font-bold text-gray-900 transition-colors group-hover:text-emerald-600 dark:text-white dark:group-hover:text-emerald-400">
-                {props.project.title}
-              </h3>
-              {props.project.company && (
-                <p className="text-sm text-gray-600 dark:text-gray-400">
-                  {props.project.company}
-                </p>
-              )}
+    <div className="group relative rounded-xl border border-gray-200 bg-white p-6 shadow-lg transition-all duration-300 hover:border-emerald-300 hover:shadow-xl dark:border-gray-600 dark:bg-gray-800 dark:hover:border-emerald-500">
+      {/* Project media */}
+      {project.media.length > 0 && (
+        <div className="relative mb-4 h-32 overflow-hidden rounded-lg">
+          <ProjectCover
+            media={project.media[0]}
+            fallbackSrc="/placeholder.jpg"
+            fallbackAlt={project.title}
+            className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+          {project.featured && (
+            <div className="absolute right-3 top-3 rounded-full bg-yellow-500 px-2 py-1 text-xs font-medium text-white">
+              Featured
             </div>
-
-            <div className="mb-3 flex items-center gap-2 text-xs">
-              <span className="rounded-full bg-emerald-100 px-2 py-1 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-300">
-                {props.project.role}
-              </span>
-              <span className="rounded-full bg-gray-100 px-2 py-1 text-gray-700 dark:bg-gray-700 dark:text-gray-300">
-                {props.project.duration}
-              </span>
-            </div>
-
-            <p className="mb-4 line-clamp-2 text-sm text-gray-600 dark:text-gray-300">
-              {props.project.description}
-            </p>
-
-            <div className="flex flex-wrap gap-1">
-              {props.project.technologies.slice(0, 4).map((tech) => (
-                <span
-                  key={tech}
-                  className="rounded-md bg-gray-100 px-2 py-1 text-xs text-gray-600 dark:bg-gray-700 dark:text-gray-400"
-                >
-                  {tech}
-                </span>
-              ))}
-              {props.project.technologies.length > 4 && (
-                <span className="rounded-md bg-gray-100 px-2 py-1 text-xs text-gray-600 dark:bg-gray-700 dark:text-gray-400">
-                  +{props.project.technologies.length - 4} more
-                </span>
-              )}
-            </div>
-          </div>
-        </div>
-      </DialogTrigger>
-
-      <DialogContent className="max-h-[85vh] max-w-5xl overflow-hidden">
-        <DialogHeader className="pb-2">
-          <DialogTitle className="text-xl font-bold">
-            {props.project.title}
-          </DialogTitle>
-          {props.project.company && (
-            <p className="text-sm text-muted-foreground">
-              {props.project.company}
-            </p>
           )}
-        </DialogHeader>
-
-        <div className="grid h-full grid-cols-1 gap-4 lg:grid-cols-2">
-          <div className="space-y-3">
-            <div className="flex justify-center">
-              <div className="relative w-80 max-w-full overflow-hidden">
-                <Carousel>
-                  <CarouselContent className="ml-0">
-                    {mediaFiles.map((media, index) => (
-                      <CarouselItem key={index}>
-                        <div className="relative aspect-[16/10] w-full overflow-hidden rounded-lg">
-                          <MediaItem
-                            src={media.src}
-                            alt={media.alt}
-                            type={media.type}
-                            className={
-                              media.type === "video"
-                                ? "h-full w-full object-cover"
-                                : "object-cover"
-                            }
-                          />
-                        </div>
-                      </CarouselItem>
-                    ))}
-                  </CarouselContent>
-                  <CarouselPrevious className="absolute top-1/2 -translate-y-1/2" />
-                  <CarouselNext className="absolute top-1/2 -translate-y-1/2" />
-                </Carousel>
-              </div>
-            </div>
-
-            <div className="flex flex-wrap gap-1">
-              <span className="rounded-full bg-emerald-100 px-2 py-1 text-xs text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-300">
-                {props.project.role}
-              </span>
-              <span className="rounded-full bg-green-100 px-2 py-1 text-xs text-green-800 dark:bg-green-900/30 dark:text-green-300">
-                {props.project.duration}
-              </span>
-              <span className="rounded-full bg-teal-100 px-2 py-1 text-xs text-teal-800 dark:bg-teal-900/30 dark:text-teal-300">
-                Team of {props.project.teamSize}
-              </span>
-            </div>
-
-            <div>
-              <p className="mb-1 text-xs text-muted-foreground">
-                <span className="font-medium">Domain:</span>{" "}
-                {props.project.domain}
-              </p>
-              <p className="text-sm leading-relaxed">
-                {props.project.description}
-              </p>
-            </div>
-
-            <div className="flex gap-2">
-              {props.project.liveUrl && (
-                <a
-                  href={props.project.liveUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex-1 rounded-lg bg-emerald-600 px-3 py-2 text-center text-sm font-medium text-white transition-colors hover:bg-emerald-700"
-                >
-                  Live Project
-                </a>
-              )}
-            </div>
-          </div>
-
-          <div className="space-y-3">
-            <div>
-              <h3 className="mb-2 text-sm font-semibold">Technologies</h3>
-              <div className="flex flex-wrap gap-1">
-                {props.project.technologies.slice(0, 8).map((tech) => (
-                  <span
-                    key={tech}
-                    className="rounded-full bg-gray-100 px-2 py-1 text-xs dark:bg-gray-700"
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            <div>
-              <h3 className="mb-2 text-sm font-semibold">Key Achievements</h3>
-              <ul className="space-y-1">
-                {props.project.achievements
-                  .slice(0, 3)
-                  .map((achievement, index) => (
-                    <li key={index} className="flex items-start text-xs">
-                      <span className="mr-1 mt-1 text-emerald-500">•</span>
-                      <span className="leading-tight">{achievement}</span>
-                    </li>
-                  ))}
-              </ul>
-            </div>
-
-            <div>
-              <h3 className="mb-2 text-sm font-semibold">Skills & Lessons</h3>
-              <ul className="space-y-1">
-                {props.project.skillsLearned.slice(0, 3).map((skill, index) => (
-                  <li key={index} className="flex items-start text-xs">
-                    <span className="mr-1 mt-1 text-green-500">•</span>
-                    <span className="leading-tight">{skill}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
         </div>
-      </DialogContent>
-    </Dialog>
+      )}
+
+      {/* Project content */}
+      <div className="mb-4">
+        <h3 className="mb-2 text-lg font-bold text-gray-900 transition-colors group-hover:text-emerald-600 dark:text-white dark:group-hover:text-emerald-400">
+          {project.title}
+        </h3>
+        <div className="mb-3 flex items-center gap-3 text-sm">
+          {project.company && (
+            <>
+              <span className="font-medium text-emerald-600 dark:text-emerald-400">
+                {project.company}
+              </span>
+              <span className="text-gray-500 dark:text-gray-400">•</span>
+            </>
+          )}
+          <span className="text-gray-600 dark:text-gray-300">
+            {project.role}
+          </span>
+        </div>
+      </div>
+
+      <p className="mb-4 text-sm leading-relaxed text-gray-600 dark:text-gray-300">
+        {project.description}
+      </p>
+
+      {/* Key technologies */}
+      <div className="mb-4">
+        <div className="flex flex-wrap gap-1">
+          {project.technologies.slice(0, 5).map((tech, techIndex) => (
+            <span
+              key={techIndex}
+              className="rounded-md bg-gray-100 px-2 py-1 text-xs text-gray-600 dark:bg-gray-700 dark:text-gray-400"
+            >
+              {tech}
+            </span>
+          ))}
+          {project.technologies.length > 5 && (
+            <span className="rounded-md bg-gray-100 px-2 py-1 text-xs text-gray-500 dark:bg-gray-700 dark:text-gray-500">
+              +{project.technologies.length - 5} more
+            </span>
+          )}
+        </div>
+      </div>
+
+      {/* Links */}
+      <div className="relative z-10 flex gap-3">
+        {project.liveUrl && (
+          <a
+            href={project.liveUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => {
+              console.log("Live Project clicked!", project.liveUrl);
+            }}
+            className="inline-flex items-center gap-1 text-sm font-medium text-emerald-600 transition-colors hover:text-emerald-700 dark:text-emerald-400 dark:hover:text-emerald-300"
+          >
+            Live Project →
+          </a>
+        )}
+        <a
+          href={`/projects/${project.id}`}
+          onClick={() => {
+            console.log("View Details clicked!", `/projects/${project.id}`);
+          }}
+          className="inline-flex items-center gap-1 text-sm font-medium text-gray-600 transition-colors hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300"
+        >
+          View Details →
+        </a>
+      </div>
+
+      {/* Hover effect */}
+      <div
+        className={`absolute inset-0 bg-gradient-to-r ${getCategoryColor(project.category)} pointer-events-none rounded-xl opacity-0 transition-opacity duration-300 group-hover:opacity-5`}
+      ></div>
+    </div>
   );
 };
 

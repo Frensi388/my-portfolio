@@ -21,8 +21,11 @@ const MediaItem = (props: MediaItemProps) => {
         muted
         playsInline
         preload="metadata"
+        style={{ backgroundColor: "#f3f4f6" }} // Light gray background for loading
       >
-        Your browser does not support the video tag.
+        <div className="flex h-full items-center justify-center bg-gray-100 text-gray-500">
+          Video not supported or failed to load
+        </div>
       </video>
     );
   }

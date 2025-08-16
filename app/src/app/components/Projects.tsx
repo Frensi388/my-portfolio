@@ -10,6 +10,7 @@ import {
 import { getPersonalProjects } from "@/data/projects";
 
 import ProjectSlide from "./ProjectSlide";
+import Timeline from "./Timeline";
 
 const Projects = () => {
   // Get personal projects from centralized data
@@ -21,9 +22,25 @@ const Projects = () => {
         {/* Section Header */}
         <div className="mb-16 text-center">
           <h2 className="mb-4 text-4xl font-bold text-gray-900 dark:text-white">
-            Personal Projects
+            My Projects
           </h2>
           <p className="mx-auto max-w-3xl text-xl text-gray-600 dark:text-gray-300">
+            A comprehensive overview of my professional work and personal
+            projects.
+          </p>
+        </div>
+
+        {/* Professional Timeline */}
+        <div className="mb-20">
+          <Timeline embedded={true} />
+        </div>
+
+        {/* Personal Projects Section */}
+        <div className="mb-16 text-center">
+          <h3 className="mb-4 text-3xl font-bold text-gray-900 dark:text-white">
+            Personal Projects
+          </h3>
+          <p className="mx-auto max-w-3xl text-lg text-gray-600 dark:text-gray-300">
             Passion projects and personal experiments that showcase my
             creativity and exploration of new technologies.
           </p>

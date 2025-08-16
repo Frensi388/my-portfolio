@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-interface BlogPost {
+type BlogPost = {
   id: number;
   title: string;
   excerpt: string;
@@ -12,7 +12,7 @@ interface BlogPost {
   tags: string[];
   category: string;
   featured: boolean;
-}
+};
 
 const Blog = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>("all");

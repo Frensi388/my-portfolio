@@ -13,7 +13,6 @@ export type Project = {
   teamSize: number;
   domain: string;
   description: string;
-  images: string[];
   media: MediaFile[];
   projectKey?: string;
   technologies: string[];
@@ -38,7 +37,7 @@ export const projects: Project[] = [
     domain: "Travel, E-commerce, Ticketing",
     description:
       "Built a comprehensive e-commerce platform for ski resort bookings, including ticketing, lessons, and guest services with AI-powered assistance.",
-    images: [],
+
     media: [
       {
         src: "https://cdn.sanity.io/files/vh1j19fm/production/20488257130a0eae4f122564d8c6310acd161f08.mov",
@@ -137,7 +136,7 @@ export const projects: Project[] = [
     description:
       "Built a comprehensive climate and mobility tracking application helping users monitor their carbon footprint through quiz flows and smart suggestions.",
     projectKey: "ithake",
-    images: [],
+
     media: [
       {
         src: "https://cdn.sanity.io/images/vh1j19fm/production/a743e49fac333bb9289fef03bb394a6837f34e57-3416x1976.png",
@@ -196,7 +195,7 @@ export const projects: Project[] = [
     description:
       "Built a comprehensive impact investment dashboard to visualize climate and social impact metrics from field data collection for stakeholders and fund managers.",
     projectKey: "janah",
-    images: [],
+
     media: [
       {
         src: "https://cdn.sanity.io/files/vh1j19fm/production/90f3eb3875975c162198c35f35fd2871fb3bdc22.mov",
@@ -229,7 +228,7 @@ export const projects: Project[] = [
       "Data Visualization",
     ],
     category: "data",
-    liveUrl: "https://example.com",
+    liveUrl: "https://www.janahcycle.org/",
     featured: false,
     achievements: [
       "Stakeholder dashboard: show impact metrics from field data",
@@ -257,7 +256,7 @@ export const projects: Project[] = [
     domain: "Asset Management, Data Ops",
     description:
       "Built a data aggregation and ML scoring system for asset management, combining headless scraping, AI classification, and data-dense dashboards for financial analysis.",
-    images: [],
+
     media: [
       {
         src: "https://cdn.sanity.io/files/vh1j19fm/production/2ae2ce7b32a5e88d853e39b3d227b0998f606ad5.mov",
@@ -301,7 +300,7 @@ export const projects: Project[] = [
       "Data Processing",
     ],
     category: "data",
-    liveUrl: "https://example.com",
+    liveUrl: "https://www.imgp.com",
     featured: false,
     achievements: [
       "Headless scraping from multiple portals; normalization",
@@ -329,7 +328,7 @@ export const projects: Project[] = [
     domain: "Culture/Retail, Computer Vision",
     description:
       "Built a React Native app with computer vision capabilities for recognizing artworks and objects in museums, providing contextual information for visitors.",
-    images: [],
+
     media: [
       {
         src: "https://cdn.sanity.io/images/vh1j19fm/production/3b82f71b02a5dd2075dcd44682ad2629f26e6b80-1338x684.png",
@@ -352,7 +351,6 @@ export const projects: Project[] = [
       "iOS",
     ],
     category: "mobile",
-    liveUrl: "https://example.com",
     featured: false,
     achievements: [
       "RN app that recognizes objects/artworks and shows context",
@@ -379,7 +377,7 @@ export const projects: Project[] = [
     domain: "EdTech",
     description:
       "Implemented authentication flows and transactional email system for a kids' language learning platform with age-appropriate UX design.",
-    images: [],
+
     media: [
       {
         src: "https://cdn.sanity.io/files/vh1j19fm/production/b93cbcb634c57339fe0cd81a28dd83b1ad0d3fec.mov",
@@ -421,7 +419,7 @@ export const projects: Project[] = [
       "Node.js",
     ],
     category: "fullstack",
-    liveUrl: "https://example.com",
+    liveUrl: "https://lingocircle.com/",
     featured: false,
     achievements: ["Auth flows and transactional emails (welcome, reset)"],
     skillsLearned: [
@@ -442,7 +440,7 @@ export const projects: Project[] = [
     domain: "Fintech/Ops",
     description:
       "Built OCR invoice processing system with structured data extraction and implemented reusable UI components for consistent data visualization.",
-    images: [],
+
     media: [
       {
         src: "https://cdn.sanity.io/images/vh1j19fm/production/a29efa8514a9daae0d67f00b0a56a5a61bff46b6-2170x1316.png",
@@ -484,7 +482,7 @@ export const projects: Project[] = [
     domain: "Fintech, Accessibility",
     description:
       "Designed and built accessible fintech onboarding interface specifically optimized for older users with focus on readability and ease of use.",
-    images: [],
+
     media: [
       {
         src: "https://cdn.sanity.io/images/vh1j19fm/production/2ab229fb7b974bfde815ec14ca48dc4950960b98-3420x1822.png",
@@ -523,7 +521,7 @@ export const projects: Project[] = [
     domain: "Healthtech, Clinical Assist",
     description:
       "Building an AI-powered healthcare platform with doctor copilot for patient summaries and mobile app for patient data management with QR-based consent flows.",
-    images: [],
+
     media: [
       {
         src: "https://cdn.sanity.io/files/vh1j19fm/production/4e2a0a92ff723dda194d3831ad1fb59ec2c46acc.mp4",
@@ -542,7 +540,6 @@ export const projects: Project[] = [
       "QR Codes",
     ],
     category: "personal",
-    liveUrl: "https://example.com",
     featured: true,
     achievements: [
       "Doctor copilot concept: AI chat that surfaces concise patient summaries from prior notes/history",
@@ -571,7 +568,7 @@ export const projects: Project[] = [
     domain: "Productivity, Personal Finance",
     description:
       "Developing a comprehensive personal productivity AI assistant with calendar sync, task management, note-taking, and finance tracking across multiple providers.",
-    images: [],
+
     media: [
       {
         src: "https://cdn.sanity.io/images/vh1j19fm/production/c9768c0f3e2dd0df8bf0779e486355730f81c6d4-3420x1640.png",
@@ -615,7 +612,6 @@ export const projects: Project[] = [
       "Background Jobs",
     ],
     category: "personal",
-    liveUrl: "https://example.com",
     featured: true,
     achievements: [
       "Calendar sync via Nylas (OAuth + webhooks) with two-way updates",

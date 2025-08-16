@@ -20,7 +20,7 @@ const Hero = () => {
               {/* Profile Image */}
               <div className="h-64 w-64 overflow-hidden rounded-full border-4 border-white shadow-2xl dark:border-gray-800 lg:h-80 lg:w-80">
                 <Image
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face"
+                  src="https://cdn.sanity.io/images/vh1j19fm/production/abc63890bd0282557148d0497af2ce7a169960a0-1334x1600.jpg"
                   alt="Frensi Muso - Full Stack Developer"
                   width={320}
                   height={320}
@@ -88,12 +88,12 @@ const Hero = () => {
               >
                 View My Work
               </a>
-              <a
+              {/* <a
                 href="#contact"
                 className="transform rounded-lg border-2 border-gray-300 px-8 py-4 font-semibold text-gray-700 transition-all duration-200 hover:scale-105 hover:border-emerald-600 hover:text-emerald-600 dark:border-gray-600 dark:text-gray-300 dark:hover:border-emerald-400 dark:hover:text-emerald-400"
               >
                 Get In Touch
-              </a>
+              </a> */}
             </div>
           </div>
         </div>
