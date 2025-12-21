@@ -206,11 +206,6 @@ const Blog = () => {
                       {post.readTime}
                     </span>
                   </div>
-                  {post.featured && (
-                    <span className="rounded-full bg-yellow-500 px-3 py-1 text-sm font-medium text-white">
-                      Featured
-                    </span>
-                  )}
                 </div>
 
                 <h3 className="mb-3 cursor-pointer text-xl font-bold text-gray-900 transition-colors hover:text-emerald-600 dark:text-white dark:hover:text-emerald-400">

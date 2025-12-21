@@ -29,11 +29,6 @@ const ProjectSlide = (props: { project: Project }) => {
             fallbackAlt={project.title}
             className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
           />
-          {project.featured && (
-            <div className="absolute right-3 top-3 rounded-full bg-yellow-500 px-2 py-1 text-xs font-medium text-white">
-              Featured
-            </div>
-          )}
         </div>
       )}
 
