@@ -20,7 +20,7 @@ const Hero = () => {
               {/* Profile Image */}
               <div className="h-48 w-48 overflow-hidden rounded-full border-4 border-white shadow-2xl dark:border-gray-800 sm:h-56 sm:w-56 md:h-64 md:w-64 lg:h-80 lg:w-80">
                 <Image
-                  src="/me/profile.jpeg"
+                  src="https://cdn.sanity.io/images/vh1j19fm/production/b9bec9ddabb032a63531153e2affcc4ffd972cb4-1496x1496.jpg"
                   alt="Frensi Muso - Full Stack Developer"
                   width={320}
                   height={320}
