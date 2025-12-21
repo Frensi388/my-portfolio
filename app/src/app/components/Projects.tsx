@@ -53,8 +53,8 @@ const Projects = () => {
         </div>
 
         {/* Horizontal Scrollable Gallery */}
-        <div className="flex justify-center">
-          <div className="scrollbar-hide max-w-full overflow-x-auto">
+        <div className="-mx-4 sm:-mx-6 lg:-mx-8">
+          <div className="scrollbar-hide overflow-x-auto px-4 sm:px-6 lg:px-8">
             <div className="flex gap-4 pb-4 sm:gap-6">
               {personalProjects.map((project) => (
                 <div

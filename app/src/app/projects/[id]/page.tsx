@@ -74,7 +74,11 @@ const ProjectPage = async ({ params }: PageProps) => {
             </div>
             <div className="flex items-center gap-2">
               <Users size={16} />
-              <span>Team of {project.teamSize}</span>
+              <span>
+                {project.teamSize === 1
+                  ? "Personal Project"
+                  : `Team of ${project.teamSize}`}
+              </span>
             </div>
           </div>
 
@@ -169,9 +173,10 @@ const ProjectPage = async ({ params }: PageProps) => {
                 Duration & Team
               </h3>
               <p className="text-gray-600 dark:text-gray-400">
-                This project was completed over {project.duration} with a team
-                of {project.teamSize}{" "}
-                {project.teamSize === 1 ? "person" : "people"}.
+                This project was completed over {project.duration}
+                {project.teamSize === 1
+                  ? " as a personal project."
+                  : ` with a team of ${project.teamSize} people.`}
               </p>
             </div>
           </div>
